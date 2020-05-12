@@ -34,10 +34,11 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex('steps').insert([
         {recipe_id:1, step_number:"1", instruction: "boil apples"},
-        {recipe_id:1, step_number:"2", instruction: "make crust"},
+        {recipe_id:1, step_number:"3", instruction: "make crust"},
         {recipe_id:2, step_number:"1", instruction: "sear shanks"},
         {recipe_id:2, step_number:"2", instruction: "braise in wine and broth"},
-        {recipe_id:2, step_number:"3", instruction: "slow cook for three hours"}
+        {recipe_id:2, step_number:"3", instruction: "slow cook for three hours"},
+        {recipe_id:1, step_number:"2", instruction: "add sugar to boiled apples"}
 
       ]);
     });
