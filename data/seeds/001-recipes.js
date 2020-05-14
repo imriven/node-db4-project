@@ -39,7 +39,6 @@ exports.seed = function(knex) {
         {recipe_id:2, step_number:"2", instruction: "braise in wine and broth"},
         {recipe_id:2, step_number:"3", instruction: "slow cook for three hours"},
         {recipe_id:1, step_number:"2", instruction: "add sugar to boiled apples"}
-
       ]);
     });
 };

@@ -19,12 +19,27 @@ function getShoppingList(recipe_id) {
 function getInstructions(recipe_id) {
     return db("steps")
     .where({recipe_id})
-    .orderBy("step.step_number", "asc")
+    .orderBy("step_number", "asc")
 }
+
+function getIngredients(ingredient_id) {
+    return db("recipe_ingredient as ri")
+    .join("recipes as r",  "ri.recipe_id", "r.id")
+    .select("r.recipe_name")
+    .where({"ri.ingredient_id": ingredient_id})  
+}
+
+// SQL query for getIngredients
+// SELECT r.recipe_name 
+// FROM recipe_ingredient as ri 
+// JOIN recipes as r 
+// ON ri.recipe_id = r.id 
+// WHERE ri.ingredient_id = 2
 
 // export for use in codebase
 module.exports = {
     getRecipes,
     getShoppingList,
-    getInstructions
+    getInstructions,
+    getIngredients
 };
